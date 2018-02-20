@@ -11,9 +11,12 @@
 <input type="button" value="Add" onclick="addItem()">
 <script>
     function addItem() {
-        let ul = document.querySelector('ul')
-        ul.children.push('hi')
-        console.log(ul);
+        let liText = document.querySelector('#newItemText')
+        let ul = document.querySelector('ul#items')
+        let li = document.createElement('li')
+        li.textContent = liText.value
+        ul.appendChild(li)
+        liText.value = ''
     }
 </script>
 </body>
