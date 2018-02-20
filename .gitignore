@@ -2,3 +2,5 @@
 \.directory
 
 JavaScript-Advanced/\.idea/
+
+*.docx#
