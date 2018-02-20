@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="time" style="border:3px solid blue; text-align:center; font-size:2em;" disabled="true"/>
+<script>window.onload = function () {
+    countdown(600);
+
+    function countdown(milisec) {
+        function ShowClock() {
+            let min = Math.floor(milisec / 60)
+            let sec = Math.floor(milisec % 60)
+
+            if (min < 10) {
+                // min = '0' + min
+            }
+            if (sec < 10) {
+                sec = '0' + sec
+            }
+
+            document.getElementById('time').value = `${min}:${sec}`
+            milisec--;
+        }
+        ShowClock()
+        let timer = setInterval(() => {
+            ShowClock();
+        }, 1000)
+
+
+    }
+}</script>
+</body>
+</html>
