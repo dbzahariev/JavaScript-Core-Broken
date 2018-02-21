@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Distance Converter</title>
+    <style>
+        label, input {
+            display: inline-block;
+            width: 5em;
+        }
+
+        label {
+            text-align: right;
+        }
+    </style>
+</head>
+<body onload="attachEventsListeners()">
+<h1>Distance Converter</h1>
+<div>
+    <label for="inputDistance">From:</label>
+    <input type="text" id="inputDistance">
+    <select id="inputUnits">
+        <option value="km">Kilometers</option>
+        <option value="m">Meters</option>
+        <option value="cm">Centimeters</option>
+        <option value="mm">Millimeters</option>
+        <option value="mi">Miles</option>
+        <option value="yrd">Yards</option>
+        <option value="ft">Feet</option>
+        <option value="in">Inches</option>
+    </select>
+    <input type="button" id="convert" value="Convert">
+</div>
+<div>
+    <label for="outputDistance">To:</label>
+    <input type="text" id="outputDistance" disabled="disabled">
+    <select id="outputUnits">
+        <option value="km">Kilometers</option>
+        <option value="m">Meters</option>
+        <option value="cm">Centimeters</option>
+        <option value="mm">Millimeters</option>
+        <option value="mi">Miles</option>
+        <option value="yrd">Yards</option>
+        <option value="ft">Feet</option>
+        <option value="in">Inches</option>
+    </select>
+</div>
+<script>
+    function attachEventsListeners() {
+        document.querySelector('#convert').addEventListener('click', ss)
+
+        function ss() {
+            let inputValType = document.querySelector('#inputUnits')
+            let outputValType = document.querySelector('#outputUnits')
+
+            let meters = -1;
+            getMeters()
+
+            let notMeters = -1
+            MetersTo()
+            function MetersTo() {
+                let outputValue = outputValType.value;
+
+                if (outputValue == 'km') {
+                    notMeters = meters / 1000;
+                }
+                if (outputValue == 'm') {
+                    notMeters = meters;
+                }
+                if (outputValue == 'cm') {
+                    notMeters = meters / 0.01;
+                }
+                if (outputValue == 'mm') {
+                    notMeters = meters / 0.001;
+                }
+                if (outputValue == 'mi') {
+                    notMeters = meters / 1609.34;
+                }
+                if (outputValue == 'yrd') {
+                    notMeters = meters / 0.9144;
+                }
+                if (outputValue == 'ft') {
+                    notMeters = meters / 0.3048;
+                }
+                if (outputValue == 'in') {
+                    notMeters = meters / 0.0254;
+                }
+            }
+            console.log(notMeters);
+
+            document.getElementById('outputDistance').value = Math.abs(notMeters)
+
+            function getMeters() {
+                let inputDistance = document.querySelector('#inputDistance')
+
+                if (inputValType.value == 'km') {
+                    meters = inputDistance.value * 1000;
+                }
+                if (inputValType.value == 'm') {
+                    meters = inputDistance.value * 1;
+                }
+                if (inputValType.value == 'cm') {
+                    meters = inputDistance.value * 0.01;
+                }
+                if (inputValType.value == 'mm') {
+                    meters = inputDistance.value / 1000;
+                }
+                if (inputValType.value == 'mi') {
+                    meters = inputDistance.value * 1609.34;
+                }
+                if (inputValType.value == 'yrd') {
+                    meters = inputDistance.value * 0.9144;
+                }
+                if (inputValType.value == 'ft') {
+                    meters = inputDistance.value * 0.3048;
+                }
+                if (inputValType.value == 'in') {
+                    meters = inputDistance.value * 0.0254;
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

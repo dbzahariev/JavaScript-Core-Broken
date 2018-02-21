@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Time Converter</title>
+    <style>
+        label, input {
+            display: inline-block;
+            width: 5em;
+        }
+
+        label {
+            text-align: right;
+        }
+    </style>
+</head>
+<body onload="attachEventsListeners()">
+<h1>Time Converter</h1>
+<div>
+    <label for="days">Days: </label>
+    <input type="text" id="days">
+    <input id="daysBtn" type="button" value="Convert">
+</div>
+<div>
+    <label for="hours">Hours: </label>
+    <input type="text" id="hours">
+    <input id="hoursBtn" type="button" value="Convert">
+</div>
+<div>
+    <label for="minutes">Minutes: </label>
+    <input type="text" id="minutes">
+    <input id="minutesBtn" type="button" value="Convert">
+</div>
+<div>
+    <label for="seconds">Seconds: </label>
+    <input type="text" id="seconds">
+    <input id="secondsBtn" type="button" value="Convert">
+</div>
+<script>
+    function attachEventsListeners() {
+        let totalDays = document.querySelector('#days')
+        let totalHours = document.querySelector('#hours')
+        let totalMinutes = document.querySelector('#minutes')
+        let totalSeconds = document.querySelector('#seconds')
+
+        function calcDays() {
+            totalHours.value = totalDays.value * 24
+            totalMinutes.value = totalDays.value * 1440
+            totalSeconds.value = totalDays.value * 86400
+        }
+        function calcHours() {
+            totalDays.value = totalHours.value / 24
+            totalMinutes.value = totalDays.value * 1440
+            totalSeconds.value = totalDays.value * 86400
+        }
+
+        function calcMinutes() {
+            totalHours.value = totalMinutes.value / 60
+            totalDays.value = totalHours.value / 24
+            totalSeconds.value = totalDays.value * 86400
+        }
+
+        function calcSeconds() {
+            totalMinutes.value = totalSeconds.value / 60
+            totalHours.value = totalMinutes.value / 60
+            totalDays.value = totalHours.value / 24
+        }
+
+        document.querySelector('#daysBtn').addEventListener('click', calcDays)
+        document.querySelector('#hoursBtn').addEventListener('click', calcHours)
+        document.querySelector('#minutesBtn').addEventListener('click', calcMinutes)
+        document.querySelector('#secondsBtn').addEventListener('click', calcSeconds)
+    }
+</script>
+</body>
+</html>
