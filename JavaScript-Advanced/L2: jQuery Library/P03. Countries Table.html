@@ -92,12 +92,10 @@
         function fixRowLinks() {
             $('#countriesTable').find('a').css('display', 'inline');
 
-            // Hide [Up] link in first table data row
             let tableRows = $('#countriesTable').find('tr');
             $(tableRows[2]).find("a:contains('Up')")
                 .css('display', 'none');
 
-            // Hide the [Down] link in the last table row
             $(tableRows[tableRows.length - 1]).find("a:contains('Down')")
                 .css('display', 'none');
         }
