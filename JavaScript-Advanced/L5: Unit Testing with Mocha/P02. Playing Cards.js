@@ -9,7 +9,6 @@ function makeCard(faces, suits) {
     if ((aveFaces.indexOf(faces) === -1) || (!aveSuits.hasOwnProperty(suits))) {
         throw new Error('Invalid input data!')
     }
-
     return {
         faces: faces,
         suits: suits,
