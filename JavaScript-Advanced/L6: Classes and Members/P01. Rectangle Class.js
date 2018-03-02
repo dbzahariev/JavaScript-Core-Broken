@@ -12,5 +12,3 @@ class Rectangle {
 
 // let myRect = new Rectangle(5, 10, 'red')
 let myRect = new Rectangle(1,2,'red')
-myRect.color = 'blue';
-console.log(myRect._color);
