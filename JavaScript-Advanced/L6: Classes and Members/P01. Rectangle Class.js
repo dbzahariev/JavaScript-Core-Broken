@@ -9,6 +9,4 @@ class Rectangle {
         return this._width * this._height
     }
 }
-
-// let myRect = new Rectangle(5, 10, 'red')
 let myRect = new Rectangle(1,2,'red')
