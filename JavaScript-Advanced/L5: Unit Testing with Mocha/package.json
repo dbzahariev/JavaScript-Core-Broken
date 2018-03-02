@@ -1,0 +1,7 @@
+{
+  "name": "L5: Unit Testing with Mocha",
+  "version": "0.0.1",
+  "dependencies": {
+    "chai": "latest"
+  }
+}
