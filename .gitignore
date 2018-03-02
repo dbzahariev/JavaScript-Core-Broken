@@ -3,6 +3,8 @@
 
 JavaScript-Advanced/\.idea/
 
+\.idea/
+
 *.docx#
 
 *.pptx#
