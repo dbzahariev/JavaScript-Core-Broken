@@ -2,3 +2,7 @@
 \.idea/
 
 *.docx#
+
+node_modules/
+
+*.json
