@@ -59,7 +59,6 @@ function Task4(rooms, guests) {
                     secondPerson.Room = rooms[dd].number
                 }
             }
-            //TODO: Сложи еднаквия пол в една стая
         }
     }
 
