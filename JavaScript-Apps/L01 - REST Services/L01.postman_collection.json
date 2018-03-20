@@ -1,0 +1,32 @@
+{
+	"id": "fcce241a-2230-4c89-8799-e7afc37ad008",
+	"name": "L01",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [
+		"6a3e1391-bf82-4a36-9de6-03ddc0c5dce8"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "6a3e1391-bf82-4a36-9de6-03ddc0c5dce8",
+			"name": "P01 - GitHub Repos for User \"testnakov\"",
+			"url": "https://api.github.com/users/testnakov/repos",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		}
+	]
+}
