@@ -6,11 +6,29 @@
 	"events": null,
 	"variables": [],
 	"order": [
-		"6a3e1391-bf82-4a36-9de6-03ddc0c5dce8"
+		"6a3e1391-bf82-4a36-9de6-03ddc0c5dce8",
+		"2f5734f8-ad9c-4f1c-b45c-5a97db6d5c66"
 	],
 	"folders_order": [],
 	"folders": [],
 	"requests": [
+		{
+			"id": "2f5734f8-ad9c-4f1c-b45c-5a97db6d5c66",
+			"name": "P02. GitHub: Labels Issue#1 (testnakov/test-nakov-repo)",
+			"url": "https://api.github.com/repos/testnakov/test-nakov-repo/issues/1",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
 		{
 			"id": "6a3e1391-bf82-4a36-9de6-03ddc0c5dce8",
 			"name": "P01 - GitHub Repos for User \"testnakov\"",
