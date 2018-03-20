@@ -7,11 +7,57 @@
 	"variables": [],
 	"order": [
 		"6a3e1391-bf82-4a36-9de6-03ddc0c5dce8",
-		"2f5734f8-ad9c-4f1c-b45c-5a97db6d5c66"
+		"2f5734f8-ad9c-4f1c-b45c-5a97db6d5c66",
+		"6bf3167b-3a38-40b5-8cee-717d11f39e96",
+		"856aac5f-77cf-4607-8584-0e75bdad4990",
+		"20c5cc04-4be4-43e0-ac8d-04030b0860c3",
+		"fe298f09-b35f-4341-b703-7700c5e9c96b",
+		"d1f0fa33-fa92-464d-ae9d-62b9caa57858",
+		"0b3b0770-ef67-4fcc-9312-8daff452fe69"
 	],
 	"folders_order": [],
 	"folders": [],
 	"requests": [
+		{
+			"id": "0b3b0770-ef67-4fcc-9312-8daff452fe69",
+			"name": "P08. Firebase: Change Book #7 Author",
+			"url": "https://testproject-f5155.firebaseio.com/Books/7/author/.json",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "\"New author was assigned\"",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "20c5cc04-4be4-43e0-ac8d-04030b0860c3",
+			"name": "P05. Firebase: Get Book #1",
+			"url": "https://testproject-f5155.firebaseio.com/Books/1/.json",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
 		{
 			"id": "2f5734f8-ad9c-4f1c-b45c-5a97db6d5c66",
 			"name": "P02. GitHub: Labels Issue#1 (testnakov/test-nakov-repo)",
@@ -44,6 +90,104 @@
 			"events": [],
 			"folder": null,
 			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "6bf3167b-3a38-40b5-8cee-717d11f39e96",
+			"name": "P03. Github: Create Issue",
+			"url": "https://api.github.com/repos/testnakov/test-nakov-repo/issues",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"basic": [
+					{
+						"key": "password",
+						"value": "Abc901210"
+					},
+					{
+						"key": "username",
+						"value": "dbzahariev@gmail.com"
+					}
+				],
+				"type": "basic"
+			},
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n\t\"title\": \"I have created an issue\",\n\t\"body\": \"Minor bug\",\n\t\"labels\": [\"bug\", \"minor\"]\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "856aac5f-77cf-4607-8584-0e75bdad4990",
+			"name": "P04. Firebase: All Books",
+			"url": "https://testproject-f5155.firebaseio.com/Books/.json",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "d1f0fa33-fa92-464d-ae9d-62b9caa57858",
+			"name": "P07. Firebase: Patch Book #7",
+			"url": "https://testproject-f5155.firebaseio.com/Books/7/.json",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "PATCH",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n  \"year\": 1981,\n  \"author\": \"Author Changed\"\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "fe298f09-b35f-4341-b703-7700c5e9c96b",
+			"name": "P06. Firebase: Create Book",
+			"url": "https://testproject-f5155.firebaseio.com/Books/.json",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n  \"title\":\"New Title\",\n  \"author\":\"New Author\"\n}",
+			"headers": "Content-Type: application/json\n",
 			"pathVariables": {}
 		}
 	]
