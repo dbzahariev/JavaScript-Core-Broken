@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<label for="email">email: </label><input type="text" id="email" placeholder="email" value="ramsess90@gmail.com">
+<br>
+<label for="password">password: </label><input type="password" id="password" placeholder="password" value="901210">
+<br>
+<br>
+<button onclick="login()">login</button>
+<button onclick="logout()">logout</button>
+<button onclick="startNormal()">loadData</button>
+<br>
+<div id="res"></div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    let config = {
+        apiKey: "AIzaSyDhCwi_zmrajT4gzax6nKPSwuxWeEZx1jQ",
+        authDomain: "testproject-f5155.firebaseapp.com",
+        databaseURL: "https://testproject-f5155.firebaseio.com",
+        projectId: "testproject-f5155",
+        storageBucket: "testproject-f5155.appspot.com",
+        messagingSenderId: "127721019113"
+    };
+    firebase.initializeApp(config);
+</script>
+<script>
+    function startFunc() {
+        $(`#res`).text('hi');
+        // let database = firebase.database();
+        // console.log(database);
+        // writeUserData('6STQfkNvCrQDAyK2bx0mVgPGTI22', null,'ramsess90@gmail.com',null)
+        // login('ramsess90@gmail.com', '901210')
+        // console.log(kk());
+        // console.log(firebase.database)
+        // cc()
+        // console.log(cc());
+        start()
+    }
+
+    function login() {
+        let [email, password] = [$(`#email`).val(), $('#password').val()]
+
+        firebase.auth().signInWithEmailAndPassword(email, password)
+            .then(function () {
+                firebase.auth().currentUser.email = email
+                firebase.auth().currentUser.password = password
+                $(`#res`).text(`Hello ${email}`)
+            })
+            .catch(function (error) {
+                let errorCode = error.code;
+                let errorMessage = error.message;
+                console.log(errorMessage)
+            });
+    }
+
+    function logout() {
+        firebase.auth().signOut().then(function () {
+            $(`#res`).text('Bye')
+            // firebase.auth().currentUser.email = ''
+            // firebase.auth().currentUser.password = ''
+        }).catch(function (error) {
+            let errorCode = error.code;
+            let errorMessage = error.message;
+            console.log(errorMessage)
+        });
+    }
+
+    // function kk() {
+    //     let userId = firebase.auth().currentUser.uid;
+    //     return firebase.database().ref('/users/' + userId).once('value').then(function (snapshot) {
+    //         let username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+    //         // ...
+    //     });
+    // }
+
+    function writeUserData(userId, name, email, imageUrl) {
+        firebase.database().ref('users/' + userId).set({
+            username: name,
+            email: email,
+            profile_picture: imageUrl
+        });
+    }
+
+    function startNormal() {
+        loadDataa()
+    }
+
+    async function start() {
+        console.log(await loadData());
+    }
+
+    function loadData() {
+        let dbRef = firebase.database().ref().child('Books');
+        dbRef.on('value', async (snapshot) => {
+            return await snapshot.val();
+        });
+    }
+
+    function loadDataa() {
+        try {
+            let dbRef = firebase.database().ref().child('Books');
+            dbRef.on('value', (snapshot) => {
+                console.log(snapshot.val());
+            });
+        }
+        catch (err){
+            console.log(err)
+        }
+    }
+</script>
+</html>

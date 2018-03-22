@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://da189i1jfloii.cloudfront.net/js/kinvey-html5-sdk-3.10.1.min.js"></script>
+</head>
+<body>
+<label for="username">username: </label><input type="text" id="username" placeholder="username" value="ramsess">
+<br>
+<label for="password">password: </label><input type="password" id="password" placeholder="password" value="901210">
+<br>
+<br>
+<button onclick="login()">login</button>
+<button onclick="logout()">logout</button>
+<button onclick="loadData()">loadData</button>
+<br>
+<div id="res"></div>
+<script>
+    const bassURL = 'https://baas.kinvey.com/'
+    const appKey = 'kid_r1z4BCl9f'
+    const appSecret = '379bf4520d7643afbdf3c3de1373ac3c'
+
+    function login() {
+        console.log('започвам')
+        let username = $(`#username`)
+        let password = $(`#password`)
+
+        let kk = bassURL + 'user/' + appKey + '/login'
+        console.log(kk);
+
+        let req = {
+            url: bassURL + 'user/' + appKey + '/login',
+            method: 'POST',
+            headers: {
+                'Authorization': 'Basic' + btoa(appKey + ':' + appSecret),
+                'Content-Type': 'application/json'
+            },
+            data: JSON.stringify({
+                username: username,
+                password: password
+            }),
+            success: loginSucces,
+            errot: (reason) => console.warn(reason)
+        }
+
+        $.ajax(req)
+
+        function loginSucces(data) {
+            console.log(data)
+            localStorage.setItem('authtotoken', data._kmd.authtotoken)
+            localStorage.setItem('username', data.username)
+        }
+
+        console.log('свърших')
+    }
+</script>
+</body>
+</html>

@@ -13,7 +13,14 @@
 		"20c5cc04-4be4-43e0-ac8d-04030b0860c3",
 		"fe298f09-b35f-4341-b703-7700c5e9c96b",
 		"d1f0fa33-fa92-464d-ae9d-62b9caa57858",
-		"0b3b0770-ef67-4fcc-9312-8daff452fe69"
+		"0b3b0770-ef67-4fcc-9312-8daff452fe69",
+		"732e5b52-cfdd-4733-baeb-348435d3b053",
+		"6155213c-efe4-456b-9659-8bd4fab1dc44",
+		"0c0916bd-907c-49c0-98bd-38aae945496d",
+		"5407bce4-088a-40d7-82d3-8db654629231",
+		"e3226f79-d2a3-410f-aad0-fdd7b125b48d",
+		"fbc1441a-d903-4171-a181-6939096a8e6e",
+		"88dd922a-6346-4b65-8367-0331decc3eb0"
 	],
 	"folders_order": [],
 	"folders": [],
@@ -39,6 +46,50 @@
 			"folder": null,
 			"rawModeData": "\"New author was assigned\"",
 			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "0c0916bd-907c-49c0-98bd-38aae945496d",
+			"name": "P11. Kinvey: Create New Post",
+			"url": "https://baas.kinvey.com/appdata/kid_r1z4BCl9f/testDB",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Host",
+					"value": "https://baas.kinvey.com",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				},
+				{
+					"key": "Authorization",
+					"value": "Kinvey 0083c807-e786-4e5c-9e17-171ada551e8a.Aghq/dxd/YZoZxgNLCUSTGchXIPazzh2G7QeyWe6s0s=",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "X-Kinvey-API-Version",
+					"value": "3",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "noauth"
+			},
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n\t\"title\": \"New Title\",\n\t\"body\": \"New Post Body\"\n}",
+			"headers": "//Host: https://baas.kinvey.com\nContent-Type: application/json\nAuthorization: Kinvey 0083c807-e786-4e5c-9e17-171ada551e8a.Aghq/dxd/YZoZxgNLCUSTGchXIPazzh2G7QeyWe6s0s=\nX-Kinvey-API-Version: 3\n",
 			"pathVariables": {}
 		},
 		{
@@ -73,6 +124,94 @@
 			"events": [],
 			"folder": null,
 			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "5407bce4-088a-40d7-82d3-8db654629231",
+			"name": "P12. Kinvey: Delete a Post",
+			"url": "https://baas.kinvey.com/appdata/kid_r1z4BCl9f/testDB/5ab3cbf05ccb1510e9ee7dc5",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Host",
+					"value": "https://baas.kinvey.com",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				},
+				{
+					"key": "Authorization",
+					"value": "Kinvey 0083c807-e786-4e5c-9e17-171ada551e8a.Aghq/dxd/YZoZxgNLCUSTGchXIPazzh2G7QeyWe6s0s=",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "X-Kinvey-API-Version",
+					"value": "3",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "noauth"
+			},
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n\t\"title\": \"New Title\",\n\t\"body\": \"New Post Body\"\n}",
+			"headers": "//Host: https://baas.kinvey.com\nContent-Type: application/json\nAuthorization: Kinvey 0083c807-e786-4e5c-9e17-171ada551e8a.Aghq/dxd/YZoZxgNLCUSTGchXIPazzh2G7QeyWe6s0s=\nX-Kinvey-API-Version: 3\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "6155213c-efe4-456b-9659-8bd4fab1dc44",
+			"name": "P10. Kinvey: All Posts",
+			"url": "https://baas.kinvey.com/appdata/kid_r1z4BCl9f/testDB",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Host",
+					"value": "https://baas.kinvey.com",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				},
+				{
+					"key": "Authorization",
+					"value": "Kinvey 0083c807-e786-4e5c-9e17-171ada551e8a.Aghq/dxd/YZoZxgNLCUSTGchXIPazzh2G7QeyWe6s0s=",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "X-Kinvey-API-Version",
+					"value": "3",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "noauth"
+			},
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n\t\"title\": \"hi\",\n\t\"body\": \"New Post Body\"\n}",
+			"headers": "//Host: https://baas.kinvey.com\nContent-Type: application/json\nAuthorization: Kinvey 0083c807-e786-4e5c-9e17-171ada551e8a.Aghq/dxd/YZoZxgNLCUSTGchXIPazzh2G7QeyWe6s0s=\nX-Kinvey-API-Version: 3\n",
 			"pathVariables": {}
 		},
 		{
@@ -128,6 +267,50 @@
 			"pathVariables": {}
 		},
 		{
+			"id": "732e5b52-cfdd-4733-baeb-348435d3b053",
+			"name": "P09. Kinvey: Handshake",
+			"url": "https://baas.kinvey.com/appdata/kid_r1z4BCl9f",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Host",
+					"value": "https://baas.kinvey.com",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Kinvey 0083c807-e786-4e5c-9e17-171ada551e8a.Aghq/dxd/YZoZxgNLCUSTGchXIPazzh2G7QeyWe6s0s=",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "X-Kinvey-API-Version",
+					"value": "3",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "noauth"
+			},
+			"events": [],
+			"folder": null,
+			"headers": "//Host: https://baas.kinvey.com\nContent-Type: application/json\nAuthorization: Kinvey 0083c807-e786-4e5c-9e17-171ada551e8a.Aghq/dxd/YZoZxgNLCUSTGchXIPazzh2G7QeyWe6s0s=\nX-Kinvey-API-Version: 3\n",
+			"pathVariables": {}
+		},
+		{
 			"id": "856aac5f-77cf-4607-8584-0e75bdad4990",
 			"name": "P04. Firebase: All Books",
 			"url": "https://testproject-f5155.firebaseio.com/Books/.json",
@@ -142,6 +325,57 @@
 			"events": [],
 			"folder": null,
 			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "88dd922a-6346-4b65-8367-0331decc3eb0",
+			"name": "P14. Kinvey: Login Copy",
+			"url": "https://baas.kinvey.com/user/kid_r1z4BCl9f/_logout",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "X-Kinvey-API-Version",
+					"value": "3",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "X-Kinvey-Request-Id",
+					"value": "f58890cef6b14bb38b17c06e3f935977",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "X-Powered-By",
+					"value": "Express",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Kinvey a6b37ad9-1e51-4dd6-a92b-476d47ddf520.CxHooyKvWAjmxIvvyEKVcalOCtBjFXUQYyT6k8uoJJI=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "noauth"
+			},
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n  \"username\": \"guest\",\n  \"password\": \"guest\"\n}",
+			"headers": "Content-Type: application/json\nX-Kinvey-API-Version: 3\nX-Kinvey-Request-Id: f58890cef6b14bb38b17c06e3f935977\nX-Powered-By: Express\nAuthorization: Kinvey a6b37ad9-1e51-4dd6-a92b-476d47ddf520.CxHooyKvWAjmxIvvyEKVcalOCtBjFXUQYyT6k8uoJJI=\n",
 			"pathVariables": {}
 		},
 		{
@@ -165,6 +399,95 @@
 			"folder": null,
 			"rawModeData": "{\n  \"year\": 1981,\n  \"author\": \"Author Changed\"\n}",
 			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "e3226f79-d2a3-410f-aad0-fdd7b125b48d",
+			"name": "P13. Kinvey: Edit a Post",
+			"url": "https://baas.kinvey.com/appdata/kid_r1z4BCl9f/testDB/5ab3cced77a480402e9fea01",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Host",
+					"value": "https://baas.kinvey.com",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				},
+				{
+					"key": "Authorization",
+					"value": "Kinvey 0083c807-e786-4e5c-9e17-171ada551e8a.Aghq/dxd/YZoZxgNLCUSTGchXIPazzh2G7QeyWe6s0s=",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "X-Kinvey-API-Version",
+					"value": "3",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "noauth"
+			},
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n\t\"title\": \"edited title\",\n\t\"body\": \"edited author\",\n\t\"hidden\": \"true\"\n}",
+			"headers": "//Host: https://baas.kinvey.com\nContent-Type: application/json\nAuthorization: Kinvey 0083c807-e786-4e5c-9e17-171ada551e8a.Aghq/dxd/YZoZxgNLCUSTGchXIPazzh2G7QeyWe6s0s=\nX-Kinvey-API-Version: 3\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "fbc1441a-d903-4171-a181-6939096a8e6e",
+			"name": "P14. Kinvey: Login",
+			"url": "https://baas.kinvey.com/user/kid_r1z4BCl9f/login",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "X-Kinvey-API-Version",
+					"value": "3",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "X-Kinvey-Request-Id",
+					"value": "f58890cef6b14bb38b17c06e3f935977",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "X-Powered-By",
+					"value": "Express",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "noauth"
+			},
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n  \"username\": \"guest\",\n  \"password\": \"guest\"\n}",
+			"headers": "Content-Type: application/json\nX-Kinvey-API-Version: 3\nX-Kinvey-Request-Id: f58890cef6b14bb38b17c06e3f935977\nX-Powered-By: Express\n",
 			"pathVariables": {}
 		},
 		{
