@@ -16,44 +16,95 @@
 <button onclick="logout()">logout</button>
 <button onclick="loadData()">loadData</button>
 <br>
-<div id="res"></div>
+<div id="res">
+    <table  border="1|0">
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Content</th>
+            <th scope="col">Body</th>
+        </tr>
+    </table>
+</div>
 <script>
     const bassURL = 'https://baas.kinvey.com/'
     const appKey = 'kid_r1z4BCl9f'
     const appSecret = '379bf4520d7643afbdf3c3de1373ac3c'
 
     function login() {
-        console.log('започвам')
-        let username = $(`#username`)
-        let password = $(`#password`)
-
-        let kk = bassURL + 'user/' + appKey + '/login'
-        console.log(kk);
-
-        let req = {
+        $.ajax({
             url: bassURL + 'user/' + appKey + '/login',
             method: 'POST',
             headers: {
-                'Authorization': 'Basic' + btoa(appKey + ':' + appSecret),
+                'Authorization': 'Basic ' + btoa(appKey + ':' + appSecret),
                 'Content-Type': 'application/json'
             },
             data: JSON.stringify({
-                username: username,
-                password: password
+                username: $(`#username`).val(),
+                password: $(`#password`).val()
             }),
-            success: loginSucces,
-            errot: (reason) => console.warn(reason)
+            success: (data) => {
+                localStorage.setItem('authtotoken', data._kmd.authtoken)
+                localStorage.setItem('username', data.username)
+            },
+            error: (reason) => console.warn(reason)
+        })
+    }
+
+    function logout() {
+        $.ajax({
+            url: bassURL + 'user/' + appKey + '/_logout',
+            method: 'POST',
+            headers: {
+                'Authorization': 'Kinvey ' + localStorage.getItem('authtotoken'),
+                'Content-Type': 'application/json'
+            },
+            data: JSON.stringify({
+                username: $(`#username`).val(),
+                password: $(`#password`).val()
+            }),
+            success: (data) => {
+                localStorage.setItem('authtotoken', '')
+                localStorage.setItem('username', '')
+            },
+            error: (reason) => console.warn(reason)
+        })
+    }
+
+    function loadData() {
+        $.ajax({
+            url: bassURL + 'appdata/' + appKey + '/testDB',
+            method: 'GET',
+            headers: {
+                'Authorization': 'Kinvey ' + localStorage.getItem('authtotoken'),
+                'Content-Type': 'application/json'
+            },
+            success: ShowData,
+            error: (reason) => console.warn(reason)
+        })
+
+        function ShowData(data) {
+            let table = $(`table`);
+            data.forEach((a) => {
+                let tr = $(`<tr>`)
+                let title = a['title']
+                if (title == undefined) {
+                    title = 'n/a'
+                }
+                let content = a['content']
+                if (content == undefined) {
+                    content = 'n/a'
+                }
+                let body = a['body']
+                if (body == undefined) {
+                    body = 'n/a'
+                }
+
+                $(tr).append($(`<td>${title}</td>`))
+                $(tr).append($(`<td>${content}</td>`))
+                $(tr).append($(`<td>${body}</td>`))
+                $(table).append(tr)
+            })
         }
-
-        $.ajax(req)
-
-        function loginSucces(data) {
-            console.log(data)
-            localStorage.setItem('authtotoken', data._kmd.authtotoken)
-            localStorage.setItem('username', data.username)
-        }
-
-        console.log('свърших')
     }
 </script>
 </body>
