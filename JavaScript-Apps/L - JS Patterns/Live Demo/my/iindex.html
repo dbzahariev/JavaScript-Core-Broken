@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="dddd()"></button>
+</body>
+<script>
+    function dddd() {
+        let auth = {
+            'basic': 'basic',
+            'kinvey': 'kinvey',
+        }
+
+        let method = {
+            'put': 'PUT',
+            'delete': 'DELETE',
+            'auth': auth,
+        }
+
+        function dd(methoda, auth) {
+            console.log(methoda)
+            console.log(auth)
+            console.error('hi')
+        }
+
+        dd(method.delete, method.auth.basic)
+    }
+</script>
+</html>
